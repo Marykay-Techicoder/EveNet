@@ -33,4 +33,11 @@ protected $fillable = [
     'is_published'
 ];
 
+public function registrations ()
+{
+    return $this->hasMany(Registration::class);
 }
+}
+
+
+
