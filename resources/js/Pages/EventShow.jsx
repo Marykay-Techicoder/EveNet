@@ -88,7 +88,8 @@ export default function EventShow({ eventId }) {
                     </p>
 
                     <Link
-                        href={`/event-registration?event=${event.id}`}
+                        href={`/event-registration/${event.id}`}
+
                         className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl"
                     >
 

@@ -24,4 +24,3 @@ Route::delete('/admin/events/{event}', [EventController::class, 'destroy']);
 |--------------------------------------------------------------------------
 */
 
-Route::post('/register-event', [RegistrationController::class, 'store']);

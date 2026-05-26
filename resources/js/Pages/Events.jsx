@@ -89,7 +89,8 @@ export default function Events() {
                         </div>
 
                         <Link
-                            href={`/events/${event.id}`} className="inline-block bg-black text-white px-5 py-2 rounded-lg"
+                            href={`/event-registration/${event.id}`}
+                            className="inline-block bg-black text-white px-5 py-2 rounded-lg"
                         >
                             <div className="flex items-center gap-2">
                                 <Ticket size={18} />

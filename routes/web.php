@@ -6,6 +6,8 @@ use App\Http\Controllers\RegistrationController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Event;
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -43,11 +45,21 @@ Route::get('/events-page', function () {
     return Inertia::render('Events');
 });
 
-Route::get('/event-registration', function () {
-    return Inertia::render('EventRegistration');
-});
+// Route::get('/event-registration', function () {
+//     return Inertia::render('EventRegistration');
+// });
+// Route::get('/event-registration/{event}', function (\App\Models\Event $event) {
+//     return Inertia::render('EventRegistration', [
+//         'event' => $event
+//     ]);
+// });
+Route::post('/register-event', [RegistrationController::class, 'store']);
 
-// Route::post('/register-event', [RegistrationController::class, 'store']);
+Route::get('/event-registration/{event}', function (Event $event) {
+    return Inertia::render('EventRegistration', [
+        'event' => $event
+    ]);
+});
 
 Route::get('/events/{id}', function ($id) {
 

@@ -8,7 +8,7 @@ const heroBg = "/images/hero-event-bg.jpg";
 const aboutImg = "/images/hero-event-bg.jpg";
 const eventCardImg = "/images/image2.png";
 const legacyImg = "/images/image2.png";
-const logo = "/images/logo2.png";
+const logo = "/images/logo.png";
 
 export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEvents = [] }) {
   const { url } = usePage();
@@ -69,7 +69,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
         <div className="flex items-center gap-4">
           {/* Logo image - replace with your own */}
           <img alt="Eventha Logo" className="h-10 w-auto" src={logo} />
-          <span className="font-headline-md text-headline-md font-bold text-primary tracking-tight">Eventha</span>
+          <span className="font-headline-md text-headline-md font-bold text-dark tracking-tight">Eventha</span>
         </div>
         <div className="hidden md:flex items-center gap-gutter">
           <a href="#events" className="text-on-surface-variant hover:text-primary transition-colors">Home</a>
@@ -80,7 +80,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
         <div className="flex items-center gap-4">
           <Link
             href="/events-page"
-            className="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md active:scale-95 transition-transform hover:shadow-md"
+            className="bg-black text-on-primary px-6 py-2 rounded-full font-label-md active:scale-95 transition-transform hover:shadow-md"
           >
             Sign Up
           </Link>
@@ -104,7 +104,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/event-registration"
-                className="bg-secondary-container text-white px-8 py-4 rounded-full font-label-md text-lg active:scale-95 transition-all w-full sm:w-auto shadow-lg hover:shadow-xl hover:-translate-y-1"
+                className="bg-secondary-container text-primary px-8 py-4 rounded-full font-label-md text-lg active:scale-95 transition-all w-full sm:w-auto shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
                 Book Your Event
               </Link>
@@ -117,7 +117,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
             </div>
           </div>
           {/* Marquee Overlay */}
-          <div className="absolute bottom-0 left-0 w-full bg-primary/90 text-white py-4 overflow-hidden z-20">
+          <div className="absolute bottom-0 left-0 w-full bg-black/90 text-white py-4 overflow-hidden z-20">
             <div className="flex whitespace-nowrap animate-marquee">
               <div className="flex gap-margin-desktop items-center">
                 {displayOngoing.map((event) => (
@@ -271,7 +271,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/event-registration"
-                className="bg-primary text-white px-10 py-4 rounded-full font-label-md hover:shadow-lg active:scale-95 transition-all"
+                className="bg-black text-white px-10 py-4 rounded-full font-label-md hover:shadow-lg active:scale-95 transition-all"
               >
                 Start Planning
               </Link>
@@ -286,7 +286,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
       {/* Footer */}
       <footer className="bg-surface-container-lowest font-body-md text-body-md w-full border-t border-outline-variant px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md">
         <div className="flex flex-col gap-2">
-          <span className="font-headline-md text-headline-md text-primary font-bold">Eventha</span>
+          <span className="font-headline-md text-headline-md text-black font-bold">Eventha</span>
           <p className="text-on-surface-variant max-w-xs">Premium event management for corporate leaders and creative visionaries.</p>
         </div>
         <div className="flex flex-wrap gap-x-gutter gap-y-stack-sm text-on-surface-variant">
