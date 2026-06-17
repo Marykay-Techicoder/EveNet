@@ -72,7 +72,7 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
           <span className="font-headline-md text-headline-md font-bold text-dark tracking-tight">Eventha</span>
         </div>
         <div className="hidden md:flex items-center gap-gutter">
-          <a href="#events" className="text-on-surface-variant hover:text-primary transition-colors">Home</a>
+          <a href="#hero" className="text-on-surface-variant hover:text-primary transition-colors">Home</a>
           <a href="#about" className="text-on-surface-variant hover:text-primary transition-colors">About</a>
           <a href="#events" className="text-on-surface-variant hover:text-primary transition-colors">Events</a>
           <a href="#register" className="text-on-surface-variant hover:text-primary transition-colors">Register</a>
@@ -82,14 +82,14 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
             href="/events-page"
             className="bg-black text-on-primary px-6 py-2 rounded-full font-label-md active:scale-95 transition-transform hover:shadow-md"
           >
-            Sign Up
+            explore
           </Link>
         </div>
       </nav>
 
       <main>
         {/* Hero Section */}
-        <section className="relative h-[795px] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[795px] min-h-[600px] flex items-center justify-center overflow-hidden" id="hero">
           <div className="absolute inset-0 z-0">
             <img alt="Event background" className="w-full h-full object-cover scale-105" src={heroBg} />
             <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/20 to-background"></div>
@@ -178,7 +178,43 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
         {/* Events Section */}
         <section className="py-section-gap bg-surface-container-low" id="events">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-4">
+             {/* Past Conferences Bento Grid */}
+            <div>
+              <h3 className="font-headline-md text-headline-md mb-stack-md">Legacy Portfolio</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div className="md:col-span-2 relative group rounded-xl overflow-hidden aspect-video md:aspect-auto">
+                  <img alt="Past big conference" className="w-full h-full object-cover" src={legacyImg} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-gutter">
+                    <span className="text-white/70 text-label-sm uppercase tracking-widest mb-1">Retrospective 2023</span>
+                    <h4 className="text-white font-headline-md">Global Marketing Summit</h4>
+                    <p className="text-white/80 font-body-md max-w-md">3,000 attendees, 45 keynote speakers, and a carbon-neutral footprint.</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-gutter">
+                  <div className="bg-white p-gutter rounded-xl shadow-sm border border-outline-variant flex-1 flex flex-col justify-between">
+                    <div>
+                      <h5 className="font-label-md text-secondary uppercase">Case Study</h5>
+                      <h4 className="font-headline-md mt-2">The Neon Gala</h4>
+                    </div>
+                    <Link href="#" className="text-primary font-label-md flex items-center gap-2 hover:underline">
+                      Read Success Story <span className="material-symbols-outlined">arrow_forward</span>
+                    </Link>
+                  </div>
+                  <div className="bg-primary-container p-gutter rounded-xl shadow-sm flex-1 flex flex-col justify-between">
+                    <div>
+                      <h5 className="font-label-md text-secondary-fixed uppercase">Metrics</h5>
+                      <div className="mt-4 flex flex-col gap-2">
+                        <span className="text-white font-headline-lg">98%</span>
+                        <span className="text-primary-fixed font-body-md">Planner Satisfaction Rate</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-4 pt-10">
               <div>
                 <h2 className="font-headline-lg text-headline-lg text-on-surface">Experience the Extraordinary</h2>
                 <p className="text-on-surface-variant font-body-md">Discover our curated selection of high-impact gatherings.</p>
@@ -223,41 +259,38 @@ export default function Home({ ongoingEvents = [], upcomingEvents = [], pastEven
                 ))}
               </div>
             </div>
-
-            {/* Past Conferences Bento Grid */}
-            <div>
-              <h3 className="font-headline-md text-headline-md mb-stack-md">Legacy Portfolio</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                <div className="md:col-span-2 relative group rounded-xl overflow-hidden aspect-video md:aspect-auto">
-                  <img alt="Past big conference" className="w-full h-full object-cover" src={legacyImg} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-gutter">
-                    <span className="text-white/70 text-label-sm uppercase tracking-widest mb-1">Retrospective 2023</span>
-                    <h4 className="text-white font-headline-md">Global Marketing Summit</h4>
-                    <p className="text-white/80 font-body-md max-w-md">3,000 attendees, 45 keynote speakers, and a carbon-neutral footprint.</p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-gutter">
-                  <div className="bg-white p-gutter rounded-xl shadow-sm border border-outline-variant flex-1 flex flex-col justify-between">
-                    <div>
-                      <h5 className="font-label-md text-secondary uppercase">Case Study</h5>
-                      <h4 className="font-headline-md mt-2">The Neon Gala</h4>
-                    </div>
-                    <Link href="#" className="text-primary font-label-md flex items-center gap-2 hover:underline">
-                      Read Success Story <span className="material-symbols-outlined">arrow_forward</span>
-                    </Link>
-                  </div>
-                  <div className="bg-primary-container p-gutter rounded-xl shadow-sm flex-1 flex flex-col justify-between">
-                    <div>
-                      <h5 className="font-label-md text-secondary-fixed uppercase">Metrics</h5>
-                      <div className="mt-4 flex flex-col gap-2">
-                        <span className="text-white font-headline-lg">98%</span>
-                        <span className="text-primary-fixed font-body-md">Planner Satisfaction Rate</span>
+            {/* Paast Events Carousel */}
+            <div className="mb-section-gap">
+              <h3 className="font-headline-md text-headline-md mb-stack-md flex items-center gap-2">
+                Past <span className="text-label-sm px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full">Completed</span>
+              </h3>
+              <div ref={carouselRef} className="flex gap-gutter overflow-x-auto hide-scrollbar pb-8">
+                {displayUpcoming.map((event) => (
+                  <Link key={event.id} href={`/events/${event.id}`} className="min-w-[300px] md:min-w-[400px] group block">
+                    <div className="relative rounded-xl overflow-hidden aspect-[1.5] mb-4">
+                      <img
+                        alt={event.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        src={eventCardImg}
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-label-sm font-bold text-primary">
+                          {event.date}
+                        </span>
                       </div>
                     </div>
-                  </div>
-                </div>
+                    <h4 className="font-label-md text-xl text-on-surface group-hover:text-secondary-container transition-colors">
+                      {event.title}
+                    </h4>
+                    <div className="flex items-center gap-2 text-on-surface-variant text-label-sm mt-1">
+                      <span className="material-symbols-outlined text-[18px]">location_on</span> {event.location}
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
+
+           
           </div>
         </section>
 

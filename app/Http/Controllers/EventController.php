@@ -18,9 +18,20 @@ class EventController extends Controller
         return response()->json($events);
     }
 
+    public function destroy(Event $event)
+    {
+        logActivity(
+            'event_deleted',
+            'Deleted event: ' . $event->title
+        );
+        
+        Event::destroy($event->id);
+        
+        return redirect()->back();
+    }
     public function store(StoreEventRequest $request)
 {
-    Event::create([
+    $event = Event::create([
 
         'category_id' => $request->category_id,
 
@@ -51,6 +62,12 @@ class EventController extends Controller
         'is_published' => false,
     ]);
 
+    logActivity(
+        'event_created',
+        'Created event: ' . $event->title
+    );
+
     return redirect()->back();
 }
+
 }
